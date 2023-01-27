@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.manish.databinding.HomeBinding
 
 class Home : Fragment() {
@@ -18,4 +19,16 @@ class Home : Fragment() {
         _binding = HomeBinding.inflate(layoutInflater)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        clickHandler()
+    }
+
+    private fun clickHandler() {
+        binding.btSubmit.setOnClickListener {
+            findNavController().navigate(HomeDirections.actionHomeToMediaPicker())
+        }
+    }
+
 }
