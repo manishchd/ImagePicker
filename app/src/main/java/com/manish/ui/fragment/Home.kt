@@ -5,8 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.fragment.findNavController
 import com.manish.databinding.HomeBinding
+import com.manish.enums.ChooseFrom
+import com.manish.enums.MediaType
+import com.manish.interfaces.IMediaResult
+import com.manish.ui.bottomsheets.MMediaPicker
+import java.io.File
 
 class Home : Fragment() {
 
@@ -14,7 +18,7 @@ class Home : Fragment() {
     private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?,
     ): View {
         _binding = HomeBinding.inflate(layoutInflater)
         return binding.root
@@ -27,8 +31,20 @@ class Home : Fragment() {
 
     private fun clickHandler() {
         binding.btSubmit.setOnClickListener {
-            findNavController().navigate(HomeDirections.actionHomeToMediaPicker())
+
+            val mediaPicker =
+                MMediaPicker.Builder
+                    .setMediaType(MediaType.IMAGE)
+                    .setChooseFrom(ChooseFrom.CAMERA)
+                    .setMediaResultListener(object : IMediaResult{
+                        override fun onSuccess(file: File) {
+
+                        }
+                    })
+                    .build()
+            mediaPicker.show(childFragmentManager,"MediaPicker")
         }
     }
+
 
 }

@@ -39,9 +39,8 @@
                 android:textColor="#1a1824"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="@id/ivCross"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@id/ivCross"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:text="Upload from" />
 
             <androidx.appcompat.widget.AppCompatImageView
@@ -51,6 +50,7 @@
                 android:layout_marginTop="5dp"
                 android:padding="10dp"
                 android:tint="#1a1824"
+                android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/ic_cross" />
@@ -59,6 +59,7 @@
                 android:id="@+id/tvCameraPick"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="5dp"
                 android:background="@drawable/bg_fill_round"
                 android:backgroundTint="#f6fafa"
@@ -74,15 +75,16 @@
                 android:textStyle="normal"
                 app:layout_constraintEnd_toStartOf="@id/tvGalleryPick"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ivCross" />
+                app:layout_constraintTop_toBottomOf="@id/uploadFrom" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/tvGalleryPick"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/bg_fill_round"
-                android:backgroundTint="@color/material_dynamic_primary0"
+                android:backgroundTint="@android:color/black"
                 android:drawableTop="@drawable/ic_gallery"
                 android:drawablePadding="10dp"
                 android:gravity="center"
@@ -95,7 +97,7 @@
                 android:textStyle="normal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@id/tvCameraPick"
-                app:layout_constraintTop_toBottomOf="@id/ivCross" />
+                app:layout_constraintTop_toBottomOf="@id/uploadFrom" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -106,9 +108,10 @@
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btSubmit"
+                style="@style/ShapeAppearanceOverlay.Material3.Button"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:backgroundTint="@color/material_dynamic_primary0"
+                android:backgroundTint="@android:color/black"
                 android:paddingVertical="15dp"
                 android:text="Submit"
                 app:cornerRadius="10dp" />

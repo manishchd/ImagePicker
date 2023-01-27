@@ -25,11 +25,13 @@
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btSubmit"
             android:layout_width="match_parent"
+            style="@style/ShapeAppearanceOverlay.Material3.Button"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/material_dynamic_primary0"
+            android:backgroundTint="@android:color/black"
             android:paddingVertical="15dp"
             android:text="Submit"
-            app:cornerRadius="10dp" />
+            app:cornerRadius="10dp"
+      />
 
 
     </LinearLayout>

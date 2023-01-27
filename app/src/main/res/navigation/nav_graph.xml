@@ -9,7 +9,7 @@
         android:id="@+id/home"
         android:name="com.manish.ui.fragment.Home"
         android:label="home"
-        tools:layout="@layout/home" >
+        tools:layout="@layout/home">
         <action
             android:id="@+id/action_home_to_mediaPicker"
             app:destination="@id/mediaPicker" />
@@ -17,8 +17,8 @@
 
     <dialog
         android:id="@+id/mediaPicker"
-        tools:layout="@layout/media_picker"
-        android:name="com.manish.ui.bottomsheets.MediaPicker"
-        android:label="MediaPicker" />
+        android:name="com.manish.ui.bottomsheets.MMediaPicker"
+        android:label="MediaPicker"
+        tools:layout="@layout/media_picker" />
 
 </navigation>
