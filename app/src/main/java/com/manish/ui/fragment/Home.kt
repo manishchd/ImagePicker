@@ -33,16 +33,13 @@ class Home : Fragment() {
         binding.btSubmit.setOnClickListener {
 
             val mediaPicker =
-                MMediaPicker.Builder
-                    .setMediaType(MediaType.IMAGE)
-                    .setChooseFrom(ChooseFrom.CAMERA)
-                    .setMediaResultListener(object : IMediaResult{
+                MMediaPicker.Builder.setMediaType(MediaType.IMAGE).setChooseFrom(ChooseFrom.CAMERA)
+                    .checkCameraPermission(true).setMediaResultListener(object : IMediaResult {
                         override fun onSuccess(file: File) {
 
                         }
-                    })
-                    .build()
-            mediaPicker.show(childFragmentManager,"MediaPicker")
+                    }).build()
+            mediaPicker.show(childFragmentManager, "MediaPicker")
         }
     }
 
